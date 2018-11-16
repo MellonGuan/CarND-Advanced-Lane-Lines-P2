@@ -19,15 +19,31 @@ The goals / steps of this project are the following:
 
 ![png](./output_images/output_7_1.png)
 
-## Correct the Distortion:
+## Camera Calibration
+
+### Correct the Distortion:
     
 Lets remove distortion from the images using camera calibbration matrix and distortion coefficients using chessboard
 
 In this exercise, you'll use the OpenCV functions findChessboardCorners() and drawChessboardCorners() to automatically find and draw corners in an image of a chessboard pattern, 
 
+The code for this step is contained in the first code cell of the IPython notebook located in "./AdvancedSubmit.ipynb" . 
+
 ![png](./output_images/output_3_0.png)
 
 ![png](./output_images/output_3_1.png)
+
+
+### undistorted calibration image 
+
+The code for this step is contained in the second code cell of the IPython notebook located in "./AdvancedSubmit.ipynb" . 
+
+I then used the output `objpoints` and `imgpoints` to compute the camera calibration and distortion coefficients using the `cv2.calibrateCamera()` function.  I applied this distortion correction to the test image using the `cv2.undistort()` function and obtained this result:
+
+![png](./output_images/output_calibration1.png)
+
+![png](./output_images/output_calibration5.png)
+
 
 ## Remove distortion from images
 There are two main steps to this process: use chessboard images to obtain image points and object points, and then use the OpenCV functions cv2.calibrateCamera() and cv2.undistort() to remove distortion from highway driving images
@@ -38,6 +54,7 @@ If you look around the edges of both original and undistorted images, you will o
 ![png](./output_images/output_4_0.png)
 
 ![png](./output_images/output_4_1.png)
+
 
 
 
